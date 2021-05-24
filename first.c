@@ -2,7 +2,7 @@
 #include<stdlib.h>
 char player = 'X';
 char tabuleiro[10] = {1,2,3,4,5,6,7,8,9} ;
-char posicao;
+int posicao;
 /* Insere o Caracter do jogador atual no campo do tabuleiro desde que o mesmo esteja livre. */
 void lancarJogada(){
     int contador = 0;
@@ -10,7 +10,6 @@ void lancarJogada(){
     tabuleiro[posicao] = player;
     if(player == 'X'){
         player = 'O';
-    
         contador++;
     }else{
         
@@ -24,6 +23,7 @@ void lancarJogada(){
 /* Inicia a jogada validando se o campo esta livre para inserir o caracter do respectivo jogador. */
 void jogada(){
     printf("Selecione a posicao que deseja marcar:\n");
+    scanf("%d", &posicao);
     switch (posicao)
     {
     case 1:
@@ -81,7 +81,7 @@ if((tabuleiro[vetorTabuleiro[i]] == 'X' && tabuleiro[vetorTabuleiro[i]+1] == 'X'
 int main (void)
 {
 
-   
+   jogada();
 
 }
 
